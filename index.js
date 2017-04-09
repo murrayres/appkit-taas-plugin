@@ -17,7 +17,9 @@ function list(appkit, args) {
       if(err) {
         return appkit.terminal.error(err);
      }
-  console.log(resp[0]);
+  resp.forEach(function(testitem){
+    console.log(testitem.job);
+  }); 
    });
   console.log("list ran");
 }
