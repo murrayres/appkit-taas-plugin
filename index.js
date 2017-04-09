@@ -27,7 +27,7 @@ function job(appkit, args) {
 
 
 function list(appkit, args) {
-    appkit.http.get('http://alamo-self-diagnostics-maru.octanner.io:4000/v1/diagnostics', {"Content-Type":"application/json"}, function(err,resp) {
+    appkit.http.get('https://alamo-self-diagnostics.octanner.io/v1/diagnostics', {"Content-Type":"application/json"}, function(err,resp) {
       if(err) {
         return appkit.terminal.error(err);
      }
