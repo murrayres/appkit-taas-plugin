@@ -23,15 +23,15 @@ function init(appkit) {
   // types "ak" or "appkit", this should not do blocking operations. Here we will add some commands
   // for users and supply the function that will execute when they run.
   appkit.args
-    .command('mypluginname', 'list releases on an app', {}, some_action.bind(null, appkit))
-    .command('mypluginname:foo', 'some description', {}, other_action.bind(null, appkit))
-    .command('mypluginname:fee ID', 'some operation on an id', {'app':{'description':'The app to act on.','string':'true','demand':true}}, fee.bind(null, appkit))
+    .command('taas', 'list releases on an app', {}, some_action.bind(null, appkit))
+    .command('taas:foo', 'some description', {}, other_action.bind(null, appkit))
+    .command('taas:fee ID', 'some operation on an id', {'app':{'description':'The app to act on.','string':'true','demand':true}}, fee.bind(null, appkit))
 }
 module.exports = {
   init:init,
   update:update,
-  group:'mypluginname',
-  help:'manage mypluginname (create, list)',
+  group:'taas',
+  help:'manage testing as a service (create, list)',
   primary:true
 };
 
