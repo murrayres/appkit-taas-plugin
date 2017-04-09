@@ -52,7 +52,6 @@ function init(appkit) {
     }
 
   appkit.args
-    .command('taas', 'list releases on an app', {}, some_action.bind(null, appkit))
     .command('taas:tests', 'list tests', list_opts, list.bind(null, appkit))
     .command('taas:job', 'describe job', {}, job.bind(null, appkit))
 }
