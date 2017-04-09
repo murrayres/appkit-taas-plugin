@@ -7,7 +7,7 @@ function job(appkit, args) {
       if(err) {
         return appkit.terminal.error(err);
      }
-    appkit.terminal.table(resp)
+    appkit.terminal.vtable(resp)
   });
 
 }
