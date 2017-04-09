@@ -12,6 +12,17 @@ function fee(appkit, args) {
   console.log("fee ran!");
 }
 
+function list(appkit, args) {
+    appkit.http.get('http://alamo-self-diagnostics-maru.octanner.io:4000', {"Content-Type":"application/json"}, (err, data) => {
+      if(err) {
+        return appkit.terminal.error(err);
+     }
+   });
+  console.log("list ran");
+  console.log(data);
+}
+
+
 function update() {
     // What do you want to do once the plugin has been updated, 
     // this is executed AFTER the plugin has had the latest set of code
@@ -33,7 +44,7 @@ function init(appkit) {
 
   appkit.args
     .command('taas', 'list releases on an app', {}, some_action.bind(null, appkit))
-    .command('taas:tests', 'some operation on an id', list_opts, fee.bind(null, appkit))
+    .command('taas:tests', 'some operation on an id', list_opts, list.bind(null, appkit))
     .command('taas:foo', 'some description', {}, other_action.bind(null, appkit))
     .command('taas:fee ID', 'some operation on an id', {'app':{'description':'The app to act on.','string':'true','demand':true}}, fee.bind(null, appkit))
 }
