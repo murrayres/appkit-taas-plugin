@@ -20,7 +20,7 @@ function list(appkit, args) {
   resp.forEach(function(testitem){
     console.log(testitem.job);
   }); 
-appkit.terminal.vtable(resp)
+appkit.terminal.table(resp)
    });
   console.log("list ran");
 }
