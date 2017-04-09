@@ -1,6 +1,8 @@
 "use strict"
 
 function job(appkit, args) {
+    jobname=args.job
+    console.log(jobname)
     appkit.http.get('http://alamo-self-diagnostics-maru.octanner.io:4000/v1/diagnostic/job/'+jobname, {"Content-Type":"application/json"}, function(err,resp) {
       if(err) {
         return appkit.terminal.error(err);
