@@ -7,7 +7,20 @@ function job(appkit, args) {
       if(err) {
         return appkit.terminal.error(err);
      }
-    appkit.terminal.vtable(resp)
+    var jobitem ={}
+    jobitem.job=resp.job+"-"+resp.jobspace
+    jobitem.app=resp.app+"-"+resp.space
+    jobitem.action = resp.action
+    jobitem.result = resp.result
+    jobitem.image = resp.image
+    jobitem.pipelinename = resp.pipelinename
+    jobitem.transitionfrom = resp.transitionfrom
+    jobitem.transitionto = resp.transitionto
+    jobitem.timeout = resp.timeout
+    jobitem.startdelay = resp.startdelay
+
+    
+    appkit.terminal.vtable(jobitem)
   });
 
 }
