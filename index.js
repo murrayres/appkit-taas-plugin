@@ -17,10 +17,14 @@ function list(appkit, args) {
       if(err) {
         return appkit.terminal.error(err);
      }
+  var shorttests = [];
   resp.forEach(function(testitem){
     console.log(testitem.job);
-  }); 
-appkit.terminal.table(resp)
+    shorttest.app=testitem.app+"-"+testitem.space
+    shorttests.push(shorttest)
+  });
+  appkit.terminal.table(shorttests) 
+
    });
   console.log("list ran");
 }
