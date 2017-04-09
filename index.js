@@ -19,7 +19,6 @@ function list(appkit, args) {
      }
   var shorttests = [];
   resp.forEach(function(testitem){
-    console.log(testitem.job);
     var shorttest={};
     shorttest.app=testitem.app+"-"+testitem.space
     shorttest.job=testitem.job+"-"+testitem.jobspace
@@ -28,7 +27,6 @@ function list(appkit, args) {
   appkit.terminal.table(shorttests) 
 
    });
-  console.log("list ran");
 }
 
 
