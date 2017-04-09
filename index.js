@@ -20,6 +20,7 @@ function list(appkit, args) {
   var shorttests = [];
   resp.forEach(function(testitem){
     console.log(testitem.job);
+    var shorttest={};
     shorttest.app=testitem.app+"-"+testitem.space
     shorttests.push(shorttest)
   });
