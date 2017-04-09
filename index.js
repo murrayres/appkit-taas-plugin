@@ -22,6 +22,7 @@ function list(appkit, args) {
     console.log(testitem.job);
     var shorttest={};
     shorttest.app=testitem.app+"-"+testitem.space
+    shorttest.job=testitem.job+"-"+testitem.jobspace
     shorttests.push(shorttest)
   });
   appkit.terminal.table(shorttests) 
