@@ -18,8 +18,9 @@ function list(appkit, args) {
         return appkit.terminal.error(err);
      }
    });
+  data=data[0]
   console.log("list ran");
-  console.log(data[0]);
+  console.log(data);
 }
 
 
