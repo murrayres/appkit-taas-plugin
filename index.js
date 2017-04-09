@@ -18,7 +18,7 @@ function job(appkit, args) {
     jobitem.transitionto = resp.transitionto
     jobitem.timeout = resp.timeout
     jobitem.startdelay = resp.startdelay
-    jobitem.env = resp.env.toString()
+    jobitem.env = JSON.stringify(resp.env)
     
     appkit.terminal.vtable(jobitem)
   });
