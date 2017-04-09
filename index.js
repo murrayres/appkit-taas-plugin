@@ -22,8 +22,18 @@ function init(appkit) {
   // This is fired when the plugin initially loads (e.g., every single time the user)
   // types "ak" or "appkit", this should not do blocking operations. Here we will add some commands
   // for users and supply the function that will execute when they run.
+   const list_opts = {
+        app: {
+            alias: 'a',
+            string: true,
+            description: 'app name.',
+            demand: false
+        }
+}
+
   appkit.args
     .command('taas', 'list releases on an app', {}, some_action.bind(null, appkit))
+    .command('taas:tests', 'some operation on an id', list_opts, fee.bind(null, appkit))
     .command('taas:foo', 'some description', {}, other_action.bind(null, appkit))
     .command('taas:fee ID', 'some operation on an id', {'app':{'description':'The app to act on.','string':'true','demand':true}}, fee.bind(null, appkit))
 }
