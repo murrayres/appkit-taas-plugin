@@ -19,7 +19,7 @@ function list(appkit, args) {
      }
    });
   console.log("list ran");
-  console.log(resp);
+  console.log(resp[0]);
 }
 
 
